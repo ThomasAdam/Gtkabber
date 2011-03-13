@@ -1,0 +1,50 @@
+Gtkabber
+========
+
+This is a very crude GTK-replacement for tabbed [1].
+
+Still very much in development.
+
+Patches welcome, see the TODO file.
+
+Dependencies
+============
+
+* GTK 2.X (will migrate to GTK 3.0 when it's adopted more fully).
+* Libunique [2]
+* GLib
+
+Operation
+=========
+
+The protocol-handling of Gtkabber sucks.  It's a huge hack.  For the
+time-being, this has to happen:
+
+% gtkabber &
+% gtkabber new-socket
+1213313
+% xterm --into 1213313
+% gtkabber new-socket
+20987
+% vimprobable2 -e 20987
+
+It should be able to capture the output of "gtkabber new-socket" though more
+dynamically.
+
+The problem is that each new tab has to have a new socket to embed (or
+"plug" to use the crap terminology of GTK) -- in theory, I could use the
+same socket many times if I was prepared to wrap that around a UNIX domain
+socket and reparent the window being sent through it, but I can't be
+bothered.
+
+This approach sucks for now, but I'll try and clean it up.
+
+Contact
+=======
+
+Thomas Adam <thomas@xteddy.org>
+
+-- Thomas Adam
+
+[1]  http://tools.suckless.org/tabbed
+[2]  http://live.gnome.org/LibUnique

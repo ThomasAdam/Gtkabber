@@ -1,0 +1,15 @@
+TODO
+====
+
+In no particular order:
+
+1.  Hook into PropertyNotify event of child widgets (GtkSocket) and listen
+    for title change to reflect tab title.
+2.  Config file.
+3.  Memory management.
+4.  Key/mouse binding support.
+5.  Cleanups to existing functions.
+6.  Try and get GtkPlug patch included upstream!
+7.  Documentation!
+8.  Autotools (?)
+9.  Socket handling and exposing to the user in a more user-friendly way.
