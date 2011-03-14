@@ -41,7 +41,7 @@ new_tab_page(struct Gtkabber *gtkabber, GtkWidget *socket)
 void
 setup_new_socket_for_plug(struct Gtkabber *gtkabber)
 {
-	struct ContainerData	 *cd;
+	struct ContainerData *cd;
 	static int __id;
 
 	{
@@ -94,13 +94,13 @@ setup_toplevel_win(struct Gtkabber *gtkabber, UniqueApp *app)
 	/* FIXME - create setup_signals() */
 	gtkabber->toplevel.toplevel_win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	g_signal_connect(gtkabber->toplevel.toplevel_win, "delete-event",
-			gtk_main_quit, NULL);	
+			gtk_main_quit, NULL);
 	gtk_window_set_default_size(
 			GTK_WINDOW(gtkabber->toplevel.toplevel_win),
 			800, 600);
 
 	gtkabber->toplevel.notebook = gtk_notebook_new();
-	
+
 	/* GtkNotebook options. */
 	gtk_notebook_popup_enable(GTK_NOTEBOOK(
 				gtkabber->toplevel.notebook));
@@ -117,7 +117,7 @@ setup_toplevel_win(struct Gtkabber *gtkabber, UniqueApp *app)
 
 	gtk_widget_show_all(gtkabber->toplevel.toplevel_win);
 
-	unique_app_watch_window (app, GTK_WINDOW(gtkabber->toplevel.toplevel_win));		
+	unique_app_watch_window (app, GTK_WINDOW(gtkabber->toplevel.toplevel_win));
 	g_signal_connect(G_OBJECT(app), "message-received",
 			G_CALLBACK(message_received_cb), (gpointer)gtkabber);
 
@@ -128,17 +128,17 @@ setup_toplevel_win(struct Gtkabber *gtkabber, UniqueApp *app)
 int
 main(int argc, char **argv)
 {
-	struct Gtkabber		 gtkabber;
-	gboolean		 version = FALSE;
-	GError			*error = NULL;
-	UniqueApp		*unique_app;
-	int			 i = 1;
-	
+	struct Gtkabber gtkabber;
+	gboolean version = FALSE;
+	GError *error = NULL;
+	UniqueApp *unique_app;
+	int i = 1;
+
 	if (!g_thread_supported())
 		g_thread_init(NULL);
 
 	memset( &gtkabber, '\0', sizeof( struct Gtkabber ) );
-	
+
 	GOptionEntry cmdline_ops[] = {
 		{
 			"version",
@@ -167,8 +167,8 @@ main(int argc, char **argv)
 	{
 		unique_instance( argc, argv, unique_app );
 		return EXIT_SUCCESS;
-	} 
-		
+	}
+
 	if (version)
 	{
 		fprintf(stderr, "%s %s\n", "gtkabber ", VERSION);

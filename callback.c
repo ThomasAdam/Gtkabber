@@ -15,7 +15,7 @@
  */
 
 #include "callback.h"
-	
+
 UniqueResponse
 message_received_cb (UniqueApp         *app,
                      UniqueCommand      command,
