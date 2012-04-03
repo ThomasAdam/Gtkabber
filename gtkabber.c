@@ -17,7 +17,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <gtk/gtk.h>
+#include <gtk/gtkx.h>
 #include <glib.h>
 
 #include "gtkabber.h"
@@ -106,8 +112,10 @@ setup_toplevel_win(struct Gtkabber *gtkabber, UniqueApp *app)
 				gtkabber->toplevel.notebook));
 	gtk_notebook_set_scrollable(GTK_NOTEBOOK(
 				gtkabber->toplevel.notebook), TRUE);
+	/*
 	gtk_notebook_set_tab_border(GTK_NOTEBOOK(
 				gtkabber->toplevel.notebook), 1);
+	*/
 	gtk_notebook_set_tab_pos (GTK_NOTEBOOK(
 				gtkabber->toplevel.notebook),
 			GTK_POS_LEFT);

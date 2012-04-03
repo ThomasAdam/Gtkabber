@@ -7,7 +7,7 @@ OBJ = gtkabber.o callback.o
 # Manpages
 #MAN = gtkabber.1
 # Used libraries to get needed CFLAGS and LDFLAGS form pkg-config
-LIBS = gtk+-2.0 unique-1.0
+LIBS = gtk+-3.0 unique-3.0
 # Files to removo by clean target
 CLEAN = $(TARGET) $(OBJ) $(DEPS)
 # Files to install by install target or remove by uninstall target

@@ -23,7 +23,7 @@ struct ContainerData
 {
 	int id;
 	GtkWidget *socket;
-	GdkNativeWindow xwin_id;
+	gint xwin_id;
 	gboolean has_plug;
 };
 
